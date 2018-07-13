@@ -7,3 +7,12 @@ ovs_kmod2_url: <ovs_kmod2_url>
 uplink_port: <uplink_port>
 ncp_image_url: <image_url>
 ncp_yaml_url: <ncp_yaml_url>
+use_local_file: false
+# Uncomment and set correct path for the following configs if use_local_file
+# is set to true
+# cni_path: <cni_path>
+# ovs_path: <ovs_path>
+# ovs_kmod1_path: <ovs_kmod1_path>
+# ovs_kmod2_path: <ovs_kmod2_path>
+# ncp_image_path: <ncp_image_path>
+# ncp_yaml_path: <ncp_yaml_path>

@@ -20,6 +20,11 @@
     url: "{{ ncp_rbac_yaml_url }}"
     dest: /tmp/ncp-rbac.yml
     force: yes
+  when: use_local_file == false
+
+- name: Copy ncp-rbac to tmp dir
+  command: "cp {{ ncp_rbac_yaml_path }} /tmp/ncp-rbac.yml"
+  when: use_local_file == true
 
 - name: Change API version for ncp-rbac
   replace:
@@ -76,6 +81,11 @@
     url: "{{ ncp_scc_yaml_url }}"
     dest: /tmp/ncp-os-scc.yml
     force: yes
+  when: use_local_file == false
+
+- name: Copy local ncp-scc to tmp dir
+  command: "cp {{ ncp_scc_yaml_path }} /tmp/ncp-os-scc.yml"
+  when: use_local_file == true
 
 - name: Load ncp-scc
   command: oc apply -f /tmp/ncp-os-scc.yml
@@ -216,6 +226,11 @@
   get_url:
     url: "{{ agent_yaml_url }}"
     dest: /tmp/nsx-node-agent-ds.yml
+  when: use_local_file == false
+
+- name: Copy local agent yaml to tmp dir
+  command: "cp {{ agent_yaml_path }} /tmp/nsx-node-agent-ds.yml"
+  when: use_local_file == true
 
 - name: Set service account for ncp
   replace:

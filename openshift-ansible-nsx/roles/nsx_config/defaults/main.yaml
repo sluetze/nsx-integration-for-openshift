@@ -16,6 +16,9 @@ vc_user: <vc_user>
 vc_password: <vc_password>
 vms: <vms>
 
+use_local_file = false
+# Uncomment and set correct path for the following configs if use_local_file
+
 nsx_t0_router_name: t0
 pod_ipblock_name: podIPBlock
 pod_ipblock_cidr: 172.20.0.0/16
